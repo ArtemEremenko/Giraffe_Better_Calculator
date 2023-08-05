@@ -19,24 +19,23 @@ namespace Giraffe_Better_Calculator
             Console.WriteLine("Enter number 2");
             float num2 = GetFloatInput();
 
-            string answ = "Answer is ";
+            //string answ = "Answer is ";
 
-            if (oper == "+")
+            float mathResult = 0;
+
+            switch (oper)
             {
-                Console.WriteLine(answ + (num1 + num2));
+                    case "+":
+                    mathResult = (num1 + num2); break;
+                    case "-":
+                    mathResult = (num1 - num2); break;
+                    case "*":
+                    mathResult = (num1 * num2); break;
+                    case "/":
+                    mathResult = (num1 / num2); break;
             }
-            else if (oper == "-")
-            {
-                Console.WriteLine(answ + (num1 - num2));
-            }
-            else if (oper == "*")
-            {
-                Console.WriteLine(answ + (num1 * num2));
-            }
-            else if (oper == "/")
-            {
-                Console.WriteLine(answ + (num1 / num2));
-            }
+
+            Console.WriteLine("Answer is " + mathResult);
         }
         private static float GetFloatInput()
         {
@@ -48,7 +47,6 @@ namespace Giraffe_Better_Calculator
 
             return num;
         }
-
         private static string GetOperInput()
         {
             string oper;
